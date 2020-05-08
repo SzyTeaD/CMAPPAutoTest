@@ -3,9 +3,7 @@ import os
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
-from config.pathes import DAY
-from config.setting import LOG_DIR, LOG_CONF
-
+from config.setting import LOG_DIR, LOG_CONF, DATE
 
 
 class Logger(object):
@@ -45,7 +43,7 @@ class Logger(object):
             console_handler.setLevel(self.console_output_level)
             self.logger.addHandler(console_handler)
             self.remove_log()   # 每天重新创建一个日志文件，最多保留backup_count份
-            lf = TimedRotatingFileHandler(filename=os.path.join(LOG_DIR, DAY+' '+self.log_file_name),
+            lf = TimedRotatingFileHandler(filename=os.path.join(LOG_DIR, DATE+' '+self.log_file_name),
                                                     when='D',
                                                     interval=1,
                                                     backupCount=self.backup_count,
