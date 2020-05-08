@@ -1,22 +1,22 @@
 import time
 import unittest
 
-from config.pathes import PROJECTINFO
 from config.setting import TEST, TEST_SHELF_URL
 from test.page.login_page import login
-from utils.BasicPage import browser, Basic
-from utils.FileReader import YamlReader
+from utils.BasicPage import Basic, get_driver
 from utils.generator import random_str
 from utils.log import Logger
+
+
+CASE_NAME = 'ShelfFORMAL'
 
 
 class Shelf(unittest.TestCase):
     @classmethod
     def setUpClass(self):
-        self.driver = browser()
+        self.driver = get_driver()
         self.dr = Basic(self.driver)
-        self.logger = Logger('TestShelfCMAPP').get_logger()
-        self.projectinfo = YamlReader(PROJECTINFO)
+        self.logger = Logger(CASE_NAME).get_logger()
 
         self.name = random_str(4, 6)  # 新建货架名称
         self.name_inele = "\"" + self.name + "\""
@@ -32,7 +32,7 @@ class Shelf(unittest.TestCase):
         MarketerName = testing_environmental.get('MarketerName')
         MarketerPassword = testing_environmental.get('MarketerPassword')
         shelf_url = TEST_SHELF_URL
-        self.logger.info('测试项目：%s')
+        self.logger.info('测试用例：%s' % CASE_NAME)
         try:
             self.dr.get_url(shelf_url)
             login(self.dr, MarketerName, MarketerPassword)

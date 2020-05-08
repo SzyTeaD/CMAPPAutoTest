@@ -14,7 +14,7 @@ class Logger(object):
         logSet = LOG_CONF    # 读取日志配置
         if not os.path.exists(LOG_DIR):
             os.mkdir(LOG_DIR)
-        self.log_file_name = logSet.get('file_name') if logSet and logSet.get('file_name') else DAY+'test.log'  # 日志文件
+        self.log_file_name = logSet.get('file_name') if logSet and logSet.get('file_name') else DATE+'test.log'  # 日志文件
         self.backup_count = logSet.get('backup') if logSet and logSet.get('backup') else 5  # 保留的日志数量
         # 日志输出级别
         self.console_output_level = logSet.get('console_level') if logSet and logSet.get('console_level') else 'WARNING'
