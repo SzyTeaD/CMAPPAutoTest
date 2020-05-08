@@ -4,26 +4,6 @@ import os
 from xlrd import open_workbook
 
 
-class YamlReader:
-    def __init__(self, yamlf):
-        if os.path.exists(yamlf):
-            self.yamlf = yamlf
-        else:
-            raise FileNotFoundError('文件不存在！')
-        self._data = None
-
-    @property
-    def data(self):
-        # 如果是第一次调用data，读取yaml文档，否则直接返回之前保存的数据
-        if not self._data:
-            with open(self.yamlf, 'rb') as f:
-                self._data = list(yaml.safe_load_all(f))
-        return self._data
-
-    def get(self, element, index=0):
-        return self.data[index].get(element)
-
-
 class SheetTypeError(Exception):
     pass
 
@@ -79,6 +59,25 @@ class ExcelReader:
                 count = int(self.s.nrows)
                 return count
 
+
+class YamlReader:
+    def __init__(self, yamlf):
+        if os.path.exists(yamlf):
+            self.yamlf = yamlf
+        else:
+            raise FileNotFoundError('文件不存在！')
+        self._data = None
+
+    @property
+    def data(self):
+        # 如果是第一次调用data，读取yaml文档，否则直接返回之前保存的数据
+        if not self._data:
+            with open(self.yamlf, 'rb') as f:
+                self._data = list(yaml.safe_load_all(f))
+        return self._data
+
+    def get(self, element, index=0):
+        return self.data[index].get(element)
 
 if __name__ == '__main__':
     e = r'F:\PyCharm\py_work\UI_AOTO\data\wxInquiryImportTemplate.xls'

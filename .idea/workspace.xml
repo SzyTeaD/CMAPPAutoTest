@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="072a9b1d-5999-4650-9f2d-eddb5ea7b790" name="Default Changelist" comment="inti">
-      <change beforePath="$PROJECT_DIR$/utils/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/report.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/BasicPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/BasicPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/FileReader.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/FileReader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/dependon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/screen.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588928703302</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="inti">
+      <created>1588929271765</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588929271765</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -185,22 +194,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="750" y="215" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588923260215" />
-    <state width="1899" height="276" key="GridCell.Tab.0.bottom" timestamp="1588929085733">
+    <state width="1899" height="276" key="GridCell.Tab.0.bottom" timestamp="1588929217183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588929085733" />
-    <state width="1899" height="276" key="GridCell.Tab.0.center" timestamp="1588929085733">
+    <state width="1899" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588929217183" />
+    <state width="1899" height="276" key="GridCell.Tab.0.center" timestamp="1588929217183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588929085733" />
-    <state width="1899" height="276" key="GridCell.Tab.0.left" timestamp="1588929085733">
+    <state width="1899" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588929217183" />
+    <state width="1899" height="276" key="GridCell.Tab.0.left" timestamp="1588929217183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588929085733" />
-    <state width="1899" height="276" key="GridCell.Tab.0.right" timestamp="1588929085733">
+    <state width="1899" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588929217183" />
+    <state width="1899" height="276" key="GridCell.Tab.0.right" timestamp="1588929217183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588929085733" />
+    <state width="1899" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588929217183" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1588922974592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

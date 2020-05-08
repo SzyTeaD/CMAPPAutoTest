@@ -15,7 +15,8 @@ EDGE_PATH = os.path.join(DRIVER_DIR, 'MicrosoftWebDriver.exe')     # EDGE驱动�
 FIRFOX_PATH = os.path.join(DRIVER_DIR, 'geckodriver.exe')     # 火狐驱动文件路径
 OPERA_PATH = os.path.join(DRIVER_DIR, 'operadriver.exe')     # 欧鹏驱动文件路径
 
-def browser(browser = None):
+
+def get_driver(browser=None):
     if browser == 'ie':
         driver = webdriver.Edge(EDGE_PATH)
     elif browser == 'firefox':
@@ -28,7 +29,7 @@ def browser(browser = None):
 
 
 class Basic():
-    def __init__(self,driver):
+    def __init__(self, driver):
         self.driver = driver
 
     def get_url(self, url, time=15):
@@ -37,40 +38,40 @@ class Basic():
         self.driver.maximize_window()
         self.driver.get(url)
 
-    def element(self, type, value, timeout=10):
+    def element(self, elementType, value, timeout=10):
         """定位元素"""
         try:
-            if type == 'xpath':
+            if elementType == 'xpath':
                 element = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_element_located(
                         (By.XPATH, value)))
                 return element
-            elif type == 'id':
+            elif elementType == 'id':
                 element = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_element_located(
                         (By.ID, value)))
                 return element
-            elif type == 'name':
+            elif elementType == 'name':
                 element = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_element_located(
                         (By.NAME, value)))
                 return element
-            elif type == 'class':
+            elif elementType == 'class':
                 element = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_element_located(
                         (By.CLASS_NAME, value)))
                 return element
-            elif type == 'link':
+            elif elementType == 'link':
                 element = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_element_located(
                         (By.LINK_TEXT, value)))
                 return element
-            elif type == 'css':
+            elif elementType == 'css':
                 element = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_element_located(
@@ -79,40 +80,40 @@ class Basic():
         except BaseException:
             print("%s 页面未找到元素 %s" % (self, value))
 
-    def elements(self, type, value, timeout=10):
+    def elements(self, elementType, value, timeout=10):
         """定位一组元素"""
         try:
-            if type == 'xpath':
+            if elementType == 'xpath':
                 elements = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_all_elements_located(
                         (By.XPATH, value)))
                 return elements
-            elif type == 'id':
+            elif elementType == 'id':
                 elements = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_all_elements_located(
                         (By.ID, value)))
                 return elements
-            elif type == 'name':
+            elif elementType == 'name':
                 elements = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_all_elements_located(
                         (By.NAME, value)))
                 return elements
-            elif type == 'class':
+            elif elementType == 'class':
                 elements = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_all_elements_located(
                         (By.CLASS_NAME, value)))
                 return elements
-            elif type == 'link':
+            elif elementType == 'link':
                 elements = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_all_elements_located(
                         (By.LINK_TEXT, value)))
                 return elements
-            elif type == 'css':
+            elif elementType == 'css':
                 elements = WebDriverWait(
                     self.driver, timeout, 1).until(
                     EC.presence_of_all_elements_located(
@@ -121,26 +122,26 @@ class Basic():
         except BaseException:
             print("%s 页面未找到元素 %s" % (self, value))
 
-    def select_by_index(self, type, value, index):
+    def select_by_index(self, elementType, value, index):
         """通过所有index，0开始,定位元素"""
         try:
-            element = self.element(type, value, timeout=10)
+            element = self.element(elementType, value, timeout=10)
             Select(element).select_by_index(index)
         except BaseException:
             print("%s 页面未找到元素 %s" % (self, value))
 
-    def select_by_value(self, type, value, value1):
+    def select_by_value(self, elementType, value, value1):
         """通过value定位元素"""
         try:
-            element = self.element(type, value, timeout=10)
+            element = self.element(elementType, value, timeout=10)
             Select(element).select_by_value(value1)
         except BaseException:
             print("%s 页面未找到元素 %s" % (self, value))
 
-    def select_by_text(self, type, value, text):
+    def select_by_text(self, elementType, value, text):
         """通过text定位元素"""
         try:
-            element = self.element(type, value, timeout=10)
+            element = self.element(elementType, value, timeout=10)
             Select(element).select_by_visible_text(text)
         except BaseException:
             print("%s 页面未找到元素 %s" % (self, value))
@@ -150,29 +151,29 @@ class Basic():
             value1).find_element_by_css_selector(value2)
         return element1.text
 
-    def clear(self, type, value):
+    def clear(self, elementType, value):
         """清除文本框"""
-        element = self.element(type, value)
+        element = self.element(elementType, value)
         element.clear()
 
-    def text(self, type, value):
+    def text(self, elementType, value):
         """获取文本内容"""
-        element = self.element(type, value)
+        element = self.element(elementType, value)
         return element.text
 
-    def get_attribute(self, type, value, name):
+    def get_attribute(self, elementType, value, name):
         """获得属性"""
-        element = self.element(type, value)
+        element = self.element(elementType, value)
         return element.get_attribute(name)
 
-    def location(self, type, value):
+    def location(self, elementType, value):
         """获得元素坐标"""
-        element = self.element(type, value)
+        element = self.element(elementType, value)
         return element.location
 
-    def size(self, type, value):
+    def size(self, elementType, value):
         """获取元素尺寸"""
-        element = self.element(type, value)
+        element = self.element(elementType, value)
         return element.size
 
     def save_screenshot(self, filename):
@@ -211,35 +212,35 @@ class Basic():
         """刷新"""
         return self.driver.refresh()
 
-    def click(self, type, value):
+    def click(self, elementType, value):
         """单击"""
-        element = self.element(type, value)
+        element = self.element(elementType, value)
         element.click()
 
-    def click_perform(self,value1,value2):
+    def click_perform(self, value1, value2):
         element1 = self.driver.find_element_by_css_selector(
             value1).find_element_by_css_selector(value2)
         element1.click()
 
-    def move_to(self, type, value):
+    def move_to(self, elementType, value):
         """鼠标悬疑"""
-        element = self.element(type, value)
+        element = self.element(elementType, value)
         ActionChains(self.driver).move_to_element(element).perform()
 
-    def context_click(self, type, value):
+    def context_click(self, elementType, value):
         """鼠标右键"""
-        element = self.element(type, value)
+        element = self.element(elementType, value)
         ActionChains(self.driver).context_click(element).perform()
 
-    def drag_and_drop(self, type, value1, value2):
+    def drag_and_drop(self, elementType, value1, value2):
         """拖拽"""
-        element = self.element(type, value1)
-        target = self.element(type, value2)
+        element = self.element(elementType, value1)
+        target = self.element(elementType, value2)
         ActionChains(self.driver).drag_and_drop(element, target).perform()
 
-    def input(self, type, value, text):
+    def input(self, elementType, value, text):
         """清除输入框内容并发送文本"""
-        element = self.element(type, value)
+        element = self.element(elementType, value)
         # element.clear()
         element.send_keys(text)
 
@@ -248,36 +249,36 @@ class Basic():
             value1).find_element_by_css_selector(value2)
         element1.input(inputvalue)
 
-    def space(self, type, value):
-        element = self.element(type, value)
+    def space(self, elementType, value):
+        element = self.element(elementType, value)
         element.send_keys(Keys.SPACE)
 
-    def tab(self, type, value):
-        element = self.element(type, value)
+    def tab(self, elementType, value):
+        element = self.element(elementType, value)
         element.send_keys(Keys.TAB)
 
-    def esc(self, type, value):
-        element = self.element(type, value)
+    def esc(self, elementType, value):
+        element = self.element(elementType, value)
         element.send_keys(Keys.ESCAPE)
 
-    def enter(self, type, value):
-        element = self.element(type, value)
+    def enter(self, elementType, value):
+        element = self.element(elementType, value)
         element.send_keys(Keys.ENTER)
 
-    def ctrla(self, type, value):
-        element = self.element(type, value)
+    def ctrla(self, elementType, value):
+        element = self.element(elementType, value)
         element.send_keys(Keys.CONTROL, 'a')
 
-    def ctrlv(self, type, value):
-        element = self.element(type, value)
+    def ctrlv(self, elementType, value):
+        element = self.element(elementType, value)
         element.send_keys(Keys.CONTROL, 'v')
 
-    def ctrlc(self, type, value):
-        element = self.element(type, value)
+    def ctrlc(self, elementType, value):
+        element = self.element(elementType, value)
         element.send_keys(Keys.CONTROL, 'c')
 
-    def ctrlx(self, type, value):
-        element = self.element(type, value)
+    def ctrlx(self, elementType, value):
+        element = self.element(elementType, value)
         element.send_keys(Keys.CONTROL, 'x')
 
     def jump_off(self):
@@ -298,8 +299,8 @@ class Basic():
             if handle != old_handle:
                 self.driver.switch_to.window(handle)
 
-    def iframe(self,type, value):
-        iframe = self.element(type, value)
+    def iframe(self, elementType, value):
+        iframe = self.element(elementType, value)
         self.driver.switch_to.frame(iframe)
 
     def frame_back(self):
