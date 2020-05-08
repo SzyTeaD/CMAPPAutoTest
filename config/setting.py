@@ -41,7 +41,7 @@ CASE_DIR = os.path.join(os.path.join(BASE_DIR, 'test'), 'case')     # 测试用�
 
 # 时间
 DATE = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-TINE = time.strftime('%H-%M-%S', time.localtime(time.time()))
+TIME = time.strftime('%H-%M-%S', time.localtime(time.time()))
 
 # 日志设置
 LOG_CONF = {
@@ -55,6 +55,6 @@ LOG_CONF = {
 # 邮件设置
 MAIL_CONF = {
     'senduser': '676307573@qq.com',
-    'sendpswd': 'atcimddyfallbebb',
-    'receusers': 'yangxin@htyunwang.com',
+    'sendpswd': 'gbgqcklauogpbcba',
+    'receusers': ['676307573@qq.com'],
 }

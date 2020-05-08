@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="072a9b1d-5999-4650-9f2d-eddb5ea7b790" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/CMAPPAutoTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CMAPPAutoTest.iml" afterDir="false" />
+    <list default="true" id="072a9b1d-5999-4650-9f2d-eddb5ea7b790" name="Default Changelist" comment="inti">
+      <change afterPath="$PROJECT_DIR$/log/2020-05-09 TestCMAPP.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/projectInfo.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/pathes.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/setting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2020-05-08 TestShelfCMAPP.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/mail.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +25,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/log" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.log">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yangxin\Desktop\CMAPPAutoTest\report" />
+      <recent name="C:\Users\yangxin\Desktop\CMAPPAutoTest\log" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yangxin\Desktop\CMAPPAutoTest\log" />
+      <recent name="C:\Users\yangxin\Desktop\CMAPPAutoTest\report" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.mail">
     <configuration name="log" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CMAPPAutoTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -43,6 +52,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/log.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mail" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CMAPPAutoTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/mail.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -74,6 +104,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mail" />
         <item itemvalue="Python.log" />
         <item itemvalue="Python.txt" />
       </list>
@@ -90,9 +121,29 @@
       <option name="presentableId" value="Default" />
       <updated>1588922930359</updated>
     </task>
+    <task id="LOCAL-00001" summary="inti">
+      <created>1588925580201</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588925580201</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="inti" />
+    <option name="LAST_COMMIT_MESSAGE" value="inti" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588925801821">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588925801821" />
+    <state x="740" y="260" key="FileChooserDialogImpl" timestamp="1588926110601">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="260" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588926110601" />
     <state x="812" y="417" key="Github.ShareDialog" timestamp="1588923016940">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -101,22 +152,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="750" y="215" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588923260215" />
-    <state width="1899" height="135" key="GridCell.Tab.0.bottom" timestamp="1588925230398">
+    <state width="1899" height="276" key="GridCell.Tab.0.bottom" timestamp="1588928173666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="135" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588925230398" />
-    <state width="1899" height="135" key="GridCell.Tab.0.center" timestamp="1588925230398">
+    <state width="1899" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588928173666" />
+    <state width="1899" height="276" key="GridCell.Tab.0.center" timestamp="1588928173666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="135" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588925230398" />
-    <state width="1899" height="135" key="GridCell.Tab.0.left" timestamp="1588925230398">
+    <state width="1899" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588928173666" />
+    <state width="1899" height="276" key="GridCell.Tab.0.left" timestamp="1588928173666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="135" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588925230398" />
-    <state width="1899" height="135" key="GridCell.Tab.0.right" timestamp="1588925230398">
+    <state width="1899" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588928173666" />
+    <state width="1899" height="276" key="GridCell.Tab.0.right" timestamp="1588928173666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="135" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588925230398" />
+    <state width="1899" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588928173666" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1588922974592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
