@@ -49,7 +49,7 @@ class Mail(object):
         body_main = self.new_log()
         report = self.new_report()
         msg = MIMEMultipart()
-        msg['Subject'] = Header('今日情况%s %s' % (DATE, TIME), 'utf-8')   # 邮件标题
+        msg['Subject'] = Header('%s-%s:测试报告' % (self.caseName,DATE,), 'utf-8')   # 邮件标题
         text = MIMEText(body_main, 'html', 'utf-8')  # 邮件内容
         msg.attach(text)
         att = MIMEText(open(report, 'rb').read(), 'base64', 'utf-8')    # 发送附件
@@ -67,5 +67,5 @@ class Mail(object):
 
 if __name__ == '__main__':
     eml = Mail('Shelftest')
-    eml.new_log()
+    eml.send_mail()
 

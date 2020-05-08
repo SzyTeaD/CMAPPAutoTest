@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="072a9b1d-5999-4650-9f2d-eddb5ea7b790" name="Default Changelist" comment="inti">
-      <change afterPath="$PROJECT_DIR$/log/2020-05-09 TestCMAPP.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/pathes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/setting.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/mail.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588925580201</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="inti">
+      <created>1588928389212</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588928389212</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -152,25 +155,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="750" y="215" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588923260215" />
-    <state width="1899" height="276" key="GridCell.Tab.0.bottom" timestamp="1588928173666">
+    <state width="1899" height="276" key="GridCell.Tab.0.bottom" timestamp="1588928542820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588928173666" />
-    <state width="1899" height="276" key="GridCell.Tab.0.center" timestamp="1588928173666">
+    <state width="1899" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588928542820" />
+    <state width="1899" height="276" key="GridCell.Tab.0.center" timestamp="1588928542820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588928173666" />
-    <state width="1899" height="276" key="GridCell.Tab.0.left" timestamp="1588928173666">
+    <state width="1899" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588928542820" />
+    <state width="1899" height="276" key="GridCell.Tab.0.left" timestamp="1588928542820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588928173666" />
-    <state width="1899" height="276" key="GridCell.Tab.0.right" timestamp="1588928173666">
+    <state width="1899" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588928542820" />
+    <state width="1899" height="276" key="GridCell.Tab.0.right" timestamp="1588928542820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588928173666" />
+    <state width="1899" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588928542820" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1588922974592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588922974592" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1588928392130">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588928392130" />
   </component>
 </project>
