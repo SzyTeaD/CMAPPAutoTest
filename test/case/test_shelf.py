@@ -3,117 +3,119 @@ import unittest
 
 from config.setting import TEST, TEST_SHELF_URL
 from test.page.login_page import login
+from test.page.shelfPage import ShelfPage
 from utils.BasicPage import Basic, get_driver
 from utils.generator import random_str
 from utils.log import Logger
 
-
-CASE_NAME = 'ShelfFORMAL'
+"""
+testing_environmental = TEST登录测试环境，
+testing_environmental = FORMAL登陆正式环境，
+"""
+testing_environmental = TEST
+CASE_NAME = 'ShelfTest'
 
 
 class Shelf(unittest.TestCase):
     @classmethod
     def setUpClass(self):
-        self.driver = get_driver()
-        self.dr = Basic(self.driver)
+        self.START_TIME = time.time()
         self.logger = Logger(CASE_NAME).get_logger()
-
-        self.name = random_str(4, 6)  # 新建货架名称
-        self.name_inele = "\"" + self.name + "\""
-        self.new_name = random_str(4, 6)  # 修改后的货架名称
-        self.new_name_inele = "\"" + self.new_name + "\""
+        self.driver = get_driver()
+        self.dr = Basic(self.driver, self.logger)
+        self.p = ShelfPage(self.dr)
 
     def test1_login(self):
-        """
-        testing_environmental = TEST登录测试环境，
-        testing_environmental = FORMAL登陆正式环境，
-        """
-        testing_environmental = TEST
+        """登陆账号"""
         MarketerName = testing_environmental.get('MarketerName')
         MarketerPassword = testing_environmental.get('MarketerPassword')
         shelf_url = TEST_SHELF_URL
-        self.logger.info('测试用例：%s' % CASE_NAME)
+        self.logger.info('测试用例：%s，开始执行!' % CASE_NAME)
         try:
             self.dr.get_url(shelf_url)
             login(self.dr, MarketerName, MarketerPassword)
-            self.logger.info('登陆成功')
+            self.logger.info('登陆成功,营销员账号是：%s' % MarketerName)
         except:
-            self.logger.info('登陆失败')
+            self.logger.error('登陆失败,营销员账号是：%s' % MarketerName)
 
-    # def test2_addshelf(self):
-    #     '''新建货架'''
-    #     self.btn.add_shelf()
-    #     self.btn.newshelfname(self.name)
-    #     self.btn.primarybtn()
-    #     time.sleep(1)
-    #     shelf_name = self.dr.text('css', '[title=' + self.name_inele + ']')
-    #     self.btn.surebtn()
-    #     self.assertEqual(shelf_name, self.name, '创建货架失败')
-    #
-    # def test3_copyshelf(self):
-    #     '''复制货架'''
-    #     time.sleep(1)
-    #     self.dr.click_perform(
-    #         '[data-name=' + self.name_inele + ']',
-    #         '[class="btnCopyShelf"]')
-    #     self.btn.surebtn()
-    #     self.btn.shelf_txt()
-    #     i = self.btn.shelf_txt()
-    #     self.assertEqual('复制成功', i, i)
-    #     self.btn.surebtn()
-    #
-    # def test4_Modifyshelf(self):
-    #     '''编辑货架'''
-    #     time.sleep(1)
-    #     self.dr.click_perform(
-    #         '[data-name=' + self.name + ']',
-    #         '[class="btnModifyShelf"]')
-    #     time.sleep(1)
-    #     self.dr.clear('name', 'shelfname')
-    #     self.dr.click('id', 'modifyShelfName')
-    #     i = self.btn.shelf_txt()
-    #     self.btn.surebtn()
-    #     self.assertEqual('请输入货架名称', i, i)
-    #     self.dr.input('name', 'shelfname', self.new_name)
-    #     self.dr.click('id', 'modifyShelfName')
-    #     i = self.btn.shelf_txt()
-    #     self.btn.surebtn()
-    #     self.assertEqual('编辑成功', i, i)
-    #
-    # def test5_delshelf(self):
-    #     '''删除货架'''
-    #     time.sleep(1)
-    #     self.dr.click_perform(
-    #         '[data-name=' + self.name_inele + ']',
-    #         '[class="btnDeleteShelf"]')
-    #     self.btn.surebtn()
-    #     i = self.btn.shelf_txt()
-    #     self.btn.surebtn()
-    #     self.assertEqual('删除成功', i, i)
-    #
-    # def test6_delshelf(self):
-    #     '''删除复制的货架'''
-    #     time.sleep(1)
-    #     self.dr.click_perform(
-    #         '[data-name=' + self.new_name_inele + ']',
-    #         '[class="btnDeleteShelf"]')
-    #     self.btn.surebtn()
-    #     i = self.btn.shelf_txt()
-    #     self.btn.surebtn()
-    #     self.assertEqual('删除成功', i, i)
-    #
-    # def test7_shareallshelf(self):
-    #     '''分享货架'''
-    #     time.sleep(1)
-    #     self.dr.click_perform(
-    #         '[class="table-list-title row hidden-xs"]',
-    #         '[class="glyphicon glyphicon-ok"]')
-    #     self.dr.click('id', 'btnShareShelves')
-    #     time.sleep(1)
-    #     self.dr.click('css', '[spm="cloudmarketing.shelflist.shareshelfcopy"]')
-    #     self.btn.surebtn()
-    #     path1 = self.dr.js_script("return jQuery('[id=copyPath]').val();")
-    #     self.dr.click('class', 'close')
+    @unittest.skip('卡顿')
+    def test2_operationShelf(self):
+        """货架增删改查测试"""
+        self.logger.info('执行货架增删改查测试：')
+        newShelfName = random_str(4, 6)  # 新建货架名称
+        _newShelfName = "\"" + newShelfName + "\""
+        try:
+            # 新建货架
+            self.p.add_shelf()
+            self.p.input_shelfName(newShelfName)
+            self.p.primaryBtn()
+            resAddInfo = self.p.shelf_txt()
+            self.p.sureBtn()
+            self.logger.info(resAddInfo)
+            time.sleep(1)
+
+            # 复制货架
+            self.dr.click_perform(
+                '[data-name=%s]' % _newShelfName,
+                '[class="btnCopyShelf"]')
+            self.p.sureBtn()
+            resCopyeInfo = self.p.shelf_txt()
+            self.logger.warning(resCopyeInfo)
+            self.assertEqual('复制成功', resCopyeInfo, resCopyeInfo)
+            self.p.sureBtn()
+            time.sleep(1)
+
+            # 编辑货架
+            reName = random_str(4, 6)  # 修改后的货架名称
+            _reName = "\"" + reName + "\""
+            self.dr.click_perform(
+                '[data-name=%s]' % newShelfName,
+                '[class="btnModifyShelf"]')
+            time.sleep(1)
+            self.dr.clear('name', 'shelfname')
+            self.dr.input('name', 'shelfname', reName)
+            self.dr.click('id', 'modifyShelfName')
+            resEditInfo = self.p.shelf_txt()
+            self.logger.warning(resEditInfo)
+            self.assertEqual('编辑成功', resEditInfo, resEditInfo)
+            self.p.sureBtn()
+
+            # 删除货架
+            time.sleep(1)
+            self.dr.click_perform(
+                '[data-name=%s]' % _reName,
+                '[class="btnDeleteShelf"]')
+            self.p.sureBtn()
+            resDelInfo = self.p.shelf_txt()
+            self.p.sureBtn()
+            self.logger.warning(resDelInfo)
+            self.assertEqual('删除成功', resDelInfo, resDelInfo)
+            # 删除复制的货架
+            time.sleep(1)
+            self.dr.click_perform(
+                '[data-name=%s]' % _newShelfName,
+                '[class="btnDeleteShelf"]')
+            self.p.sureBtn()
+            resDelInfo2 = self.p.shelf_txt()
+            self.p.sureBtn()
+            self.logger.warning(resDelInfo)
+            self.assertEqual('删除成功', resDelInfo2, resDelInfo2)
+            self.logger.info('货架增删改查测试执行通过！')
+        except:
+            self.logger.error('Operation Shelf Error')
+
+    def test2_shareShelf(self):
+        """分享货架"""
+        time.sleep(1)
+        self.dr.click_perform(
+            '[class="table-list-title row hidden-xs"]',
+            '[class="glyphicon glyphicon-ok"]')
+        self.dr.click('id', 'btnShareShelves')
+        time.sleep(1)
+        self.dr.click('css', '[spm="cloudmarketing.shelflist.shareshelfcopy"]')
+        self.p.sureBtn()
+        path1 = self.dr.js_script("return jQuery('[id=copyPath]').val();")
+        self.dr.click('class', 'close')
     #
     # @unittest.skip('卡顿')
     # def test8_product_management(self):
@@ -186,8 +188,11 @@ class Shelf(unittest.TestCase):
 
     @classmethod
     def tearDownClass(self):
-        pass
+
         # self.dr.quit()
+        END_TIME = time.time()
+        RUN_TIME = round((END_TIME - self.START_TIME), 2)
+        self.logger.info('用例执行时长：%s秒' % RUN_TIME)
 
 
 if __name__ == '__main__':

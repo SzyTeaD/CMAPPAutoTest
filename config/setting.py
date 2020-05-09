@@ -47,7 +47,7 @@ TIME = time.strftime('%H-%M-%S', time.localtime(time.time()))
 LOG_CONF = {
     'file_name': 'TestCMAPP.log',
     'backup': 5,
-    'console_level': 'WARNING',
+    'console_level': 'ERROR',
     'file_level': 'DEBUG',
     'pattern': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
 }

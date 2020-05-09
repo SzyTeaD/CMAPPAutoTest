@@ -1,0 +1,13 @@
+2020-05-09 16:57:40,039 - ShelfTest - INFO - 测试用例：ShelfTest，开始执行!
+2020-05-09 16:57:52,095 - ShelfTest - INFO - 登陆成功,营销员账号是：15801590000
+2020-05-09 16:57:52,095 - ShelfTest - INFO - 执行货架增删改查测试：
+2020-05-09 16:57:52,588 - ShelfTest - INFO - 新增货架成功
+2020-05-09 16:57:53,859 - ShelfTest - WARNING - 复制成功
+2020-05-09 16:57:56,211 - ShelfTest - WARNING - 编辑成功
+2020-05-09 16:57:57,638 - ShelfTest - WARNING - 删除成功
+2020-05-09 16:57:58,953 - ShelfTest - INFO - 货架增删改查测试执行通过
+2020-05-09 16:57:58,954 - ShelfTest - INFO - 用例执行时长：21.16秒
+2020-05-09 17:11:50,969 - ShelfTest - INFO - 测试用例：ShelfTest，开始执行!
+2020-05-09 17:11:58,775 - ShelfTest - INFO - 登陆成功,营销员账号是：15801590000
+2020-05-09 17:12:17,085 - ShelfTest - ERROR - <utils.BasicPage.Basic object at 0x000002460B778C50> 页面未找到元素 [spm="cloudmarketing.shelflist.shareshelfcopy"]
+2020-05-09 17:12:17,089 - ShelfTest - INFO - 用例执行时长：28.33秒

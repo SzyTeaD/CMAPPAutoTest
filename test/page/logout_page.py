@@ -1,7 +1,8 @@
 import time
 
-class Logout():
-    def logout(self,driver):
+
+class Logout(object):
+    def logout(self, driver):
         old_url = driver.current_url()
         while True:
             driver.move_to('id', 'commission')

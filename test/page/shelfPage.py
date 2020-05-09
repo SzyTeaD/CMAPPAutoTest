@@ -15,6 +15,15 @@ class ShelfPage(object):
         # 编辑货架
         self.driver.click('class', 'btnModifyShelf')
 
-    def rename_shelf(self, name):
+    def input_shelfName(self, name):
         # 输入新货架名称
         self.driver.input('name', 'newshelfname', name)
+
+    def primaryBtn(self):
+        self.driver.click('css', '[class="btn btn-primary"]')
+
+    def sureBtn(self):
+        self.driver.click('css', '[class="btn btn-primary sureBtn"]')
+
+    def shelf_txt(self):
+        return self.driver.text('class', 'ht-modal-default-text')

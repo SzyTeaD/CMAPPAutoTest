@@ -29,8 +29,9 @@ def get_driver(browser=None):
 
 
 class Basic():
-    def __init__(self, driver):
+    def __init__(self, driver, logger):
         self.driver = driver
+        self.logger = logger
 
     def get_url(self, url, time=15):
         """最大化打开网页"""
@@ -78,7 +79,7 @@ class Basic():
                         (By.CSS_SELECTOR, value)))
                 return element
         except BaseException:
-            print("%s 页面未找到元素 %s" % (self, value))
+            self.logger.error("%s 页面未找到元素 %s" % (self, value))
 
     def elements(self, elementType, value, timeout=10):
         """定位一组元素"""
@@ -120,7 +121,7 @@ class Basic():
                         (By.CSS_SELECTOR, value)))
                 return elements
         except BaseException:
-            print("%s 页面未找到元素 %s" % (self, value))
+            self.logger.error("%s 页面未找到元素 %s" % (self, value))
 
     def select_by_index(self, elementType, value, index):
         """通过所有index，0开始,定位元素"""
@@ -128,7 +129,7 @@ class Basic():
             element = self.element(elementType, value, timeout=10)
             Select(element).select_by_index(index)
         except BaseException:
-            print("%s 页面未找到元素 %s" % (self, value))
+            self.logger.error("%s 页面未找到元素 %s" % (self, value))
 
     def select_by_value(self, elementType, value, value1):
         """通过value定位元素"""
@@ -136,7 +137,7 @@ class Basic():
             element = self.element(elementType, value, timeout=10)
             Select(element).select_by_value(value1)
         except BaseException:
-            print("%s 页面未找到元素 %s" % (self, value))
+            self.logger.error("%s 页面未找到元素 %s" % (self, value))
 
     def select_by_text(self, elementType, value, text):
         """通过text定位元素"""
@@ -144,7 +145,7 @@ class Basic():
             element = self.element(elementType, value, timeout=10)
             Select(element).select_by_visible_text(text)
         except BaseException:
-            print("%s 页面未找到元素 %s" % (self, value))
+            self.logger.error("%s 页面未找到元素 %s" % (self, value))
 
     def text_perform(self, value1, value2):
         element1 = self.driver.find_element_by_css_selector(
